@@ -9,7 +9,7 @@ const AppNavbar = () => {
           <NavbarBrand href="/">Download v2</NavbarBrand>
           <Nav className="ml-auto flex-row" navbar>
             <NavItem>
-              <NavLink href="add">Add/Upload</NavLink>
+              <NavLink href="/add">Přidat/Nahrát</NavLink>
             </NavItem>
             <NavItem style={{ marginLeft: "16px" }}>
               <NavLink href="https://github.com/hynekfisera/download-new">GitHub</NavLink>
