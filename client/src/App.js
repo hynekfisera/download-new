@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import AppNavbar from "./components/AppNavbar";
 import ItemList from "./components/ItemList";
+import AddItem from "./components/AddItem";
 import Menu from "./components/Menu";
 import { Container, Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -27,7 +28,9 @@ function App() {
             </Col>
             <Col md="8">
               <Switch>
-                <Route path="/add"></Route>
+                <Route path="/add">
+                  <AddItem />
+                </Route>
                 <Route path="/">
                   <ItemList category={category} />
                 </Route>
