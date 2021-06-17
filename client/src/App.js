@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { v1 as uuid } from "uuid";
 import AppNavbar from "./components/AppNavbar";
 import ItemList from "./components/ItemList";
 import AddItem from "./components/AddItem";
@@ -11,6 +12,32 @@ import "./App.css";
 function App() {
   const path = window.location.pathname.split("/");
   const [category, setCategory] = useState("");
+  const [items, setItems] = useState([
+    {
+      id: uuid(),
+      name: "test",
+      path: "text.txt",
+      type: "file",
+      category: "prg",
+      date: "2021-06-12T12:56:59.584Z",
+    },
+    {
+      id: uuid(),
+      name: "test2",
+      path: "test.py",
+      type: "file",
+      category: "alg",
+      date: "2021-06-13T08:25:59.584Z",
+    },
+    {
+      id: uuid(),
+      name: "Google",
+      path: "https://google.com/",
+      type: "link",
+      category: "other",
+      date: "2021-06-11T12:56:59.584Z",
+    },
+  ]);
 
   useEffect(() => {
     if (path[1] === "category") {
@@ -32,7 +59,7 @@ function App() {
                   <AddItem />
                 </Route>
                 <Route path="/">
-                  <ItemList category={category} />
+                  <ItemList items={items} category={category} />
                 </Route>
               </Switch>
             </Col>
